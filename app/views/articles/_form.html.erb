@@ -1,0 +1,33 @@
+<div class="container">
+<div class="form-group row mt-3">
+  <%= f.label :title, class:"col-2 col-form-label text-light" %>
+  <div class="col-10">
+  <%= f.text_field :title, class:"form-control", placeholder:"Title of article" %>
+</div>
+</div>
+<div class="form-group row">
+  <%= f.label :description, class:"col-2 col-form-label text-light" %>
+  <div class="col-10">
+  <%= f.text_area :description, rows: 10, class:"form-control shadow rounded mt-3", placeholder:"Description of article" %>
+  </div>
+</div>
+
+<div class="form-group row mt-3">
+  <%= f.label :category, class:"col-2 col-form-label text-light" %>
+  <div class="col-10">
+    <%= f.collection_select(:category_ids, Category.all, :id, :name, 
+                                          {prompt: "Make your selection (can be empty)"}, {multiple: true, size: 3, class: "form-select shadow rounded"}) %>
+  </div>
+</div>
+
+
+
+<div class="form-group row justify-content-center mt-2">
+  <%= f.submit class:"col-2 btn btn-outline-light btn-lg"%>
+</div>
+
+  </div>
+  </div>
+<div class="text-center mb-">
+   <%= link_to '[Cancel and return to articles listing]', articles_path, class:"text-info text-decoration-none"%>
+  </div>

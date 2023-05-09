@@ -1,0 +1,30 @@
+<div class="container">
+<div class="form-group row mt-3">
+  <%= f.label :username, class:"col-2 col-form-label text-light" %>
+  <div class="col-10">
+  <%= f.text_field :username, class:"form-control", placeholder:"Enter a username" %>
+</div>
+</div>
+<div class="form-group row">
+  <%= f.label :email, class:"col-2 col-form-label text-light" %>
+  <div class="col-10">
+  <%= f.email_field :email, class:"form-control shadow rounded mt-3", placeholder:"Enter your email adress" %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <%= f.label :password, class:"col-2 col-form-label text-light" %>
+  <div class="col-10">
+  <%= f.password_field :password, class:"form-control shadow rounded mt-3", placeholder:"Choose a password" %>
+  </div>
+
+<div class="form-group row justify-content-center mt-2">
+  <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class:"col-2 btn btn-outline-light btn-lg")%>
+</div>
+
+  </div>
+  </div>
+<div class="text-center mb-4">
+   <%= link_to '[Cancel and return to articles listing]', articles_path, class:"text-info text-decoration-none"%>
+  </div>
+  
